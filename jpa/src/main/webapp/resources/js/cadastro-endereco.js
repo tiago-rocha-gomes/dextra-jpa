@@ -36,7 +36,7 @@ function sendToServer() {
 		var datastring = form.serialize();
 		$.ajax({
 			type : "POST",
-			url : "cadastra-endereco",
+			url : "cadastrar-endereco",
 			data : datastring,
 			success : function(data) {
 				succesEl.show();

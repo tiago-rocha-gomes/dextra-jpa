@@ -1,3 +1,17 @@
+<head><!-- Bootstrap -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>TechBody</title>
+
+<link href="resources/globais/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
+<script src="resources/globais/js/jquery.min.js"></script>
+<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
+<script src="resources/globais/js/bootstrap.min.js"></script>
+</head>
 <!-- MENU PRINCIPAL -->
 	<nav class="navbar navbar-default">
 	<div class="container-fluid">
