@@ -22,6 +22,7 @@ public class CadastroEnderecoExemploController {
 		return "cadastro-exemplo";
 	}
 	
+	
 	@RequestMapping(value="/cadastrar-endereco", method=RequestMethod.POST)
 	@ResponseBody
 	public MessageResponse populaEndereco(
