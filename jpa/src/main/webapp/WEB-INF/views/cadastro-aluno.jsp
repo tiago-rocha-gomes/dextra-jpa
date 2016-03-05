@@ -84,24 +84,6 @@
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="login">Login</label>  
-  <div class="col-md-4">
-  <input id="login" name="login" placeholder="Login do Aluno..." class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="senha">Senha</label>  
-  <div class="col-md-4">
-  <input id="senha" name="senha" placeholder="Senha do Aluno..." class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
   <label class="col-md-4 control-label" for="altura">Altura</label>  
   <div class="col-md-2">
   <input id="altura" name="altura" placeholder="Altura do Aluno..." class="form-control input-md" required="" type="text">
