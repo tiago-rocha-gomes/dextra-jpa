@@ -43,12 +43,7 @@ public class Pessoa {
 	@Column
 	private int idade;
 	
-	@Column
-	private String login;
-	
-	@Column
-	private String senha;
-	
+
 	@Column
 	private Date dataCadastro;
 	
@@ -90,22 +85,6 @@ public class Pessoa {
 
 	public void setIdade(int idade) {
 		this.idade = idade;
-	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 
 	public Date getDataCadastro() {
