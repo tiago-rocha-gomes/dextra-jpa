@@ -1,5 +1,7 @@
 package br.com.techbody.entities;
 
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -25,7 +27,7 @@ public class Sexo {
 	
 	@JsonIgnore(value=true)
 	@OneToMany(fetch=FetchType.LAZY, mappedBy = "sexo")
-	private Pessoa pessoa;
+	private Collection<Pessoa> pessoa;
 	
 	@Column
 	private String descricao;
