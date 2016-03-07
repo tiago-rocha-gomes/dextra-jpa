@@ -10,10 +10,15 @@
 </head>
 
 <body>
-	
+	<div class="alert alert-success" role="alert" style="font-weight: bold;">
+		<!-- DIV DE MSG DE SUCESSO -->
+	</div>
+	<div class="alert alert-danger" role="alert" style="font-weight: bold;">
+		<!-- DIV DE MSG DE ERRO -->
+	</div>
 	<!-- !!!!!!!!!!!!!!!!!!!!AQUI COMEÇA O FORMULÁRIO DE CADASTRO DE ALUNOS!!!!!!!!!!!!!!!!!!!!!!!-->
 	
-	<form class="form-horizontal">
+	<form class="form-horizontal" id="form-aluno">
 <fieldset>
 
 <!-- Form Name -->

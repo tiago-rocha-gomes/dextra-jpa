@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import br.com.techbody.controller.json.MessageResponse;
 import br.com.techbody.entities.Aluno;
@@ -25,6 +26,7 @@ public class AlunoController {
 	}
 	
 	@RequestMapping("/inserir-aluno")
+	@ResponseBody
 	public MessageResponse inserirAluno(@RequestParam String nome,
 			@RequestParam String sobrenome,
 			@RequestParam int idade,
@@ -53,7 +55,7 @@ public class AlunoController {
 			
 			message = "Aluno inserido com sucesso.";
 		}catch(Exception e){
-			message = "Falha ao inserir aluno.";
+			message = e.getMessage();
 		}	
 		return new MessageResponse(message);
 	}
