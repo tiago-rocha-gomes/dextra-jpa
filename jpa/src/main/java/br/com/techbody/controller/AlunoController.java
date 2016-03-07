@@ -20,8 +20,7 @@ public class AlunoController {
 	private AlunoService alunoService;
 	
 	@RequestMapping("/cadastro-aluno")
-	public String cadastroAluno(){
-		
+	public String cadastroAluno(){		
 		return "cadastro-aluno";
 	}
 	
@@ -55,8 +54,7 @@ public class AlunoController {
 			message = "Aluno inserido com sucesso.";
 		}catch(Exception e){
 			message = "Falha ao inserir aluno.";
-		}
-		
+		}	
 		return new MessageResponse(message);
 	}
 
