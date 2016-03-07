@@ -4,12 +4,13 @@
 <html>
 
 <!-- INCLUDE DO MENU -->
-<!--jsp:include page="menu.jsp" />
+<jsp:include page="menu.jsp" />
 <body>
 <!-- JAVASCRIPT DA PÁGINA AQUI -->
 <!--<script src="resources/js/cadastro-endereco.js"></script> -->
 
+
 <jsp:include page="login.jsp" />
-	
+<jsp:include page="footer.jsp" />
 </body>
 </html>

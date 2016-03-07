@@ -5,36 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Cadastro de Aluno</title>
-
-
-<!--  JQUERY-UI (only sortable and datepicker is needed) -->
-<link rel="stylesheet" type="text/css" href="/path/to/jquery-ui.min.css">
-<script type="text/javascript" src="/path/to/jquery-ui.min.js"></script>
-<!--  if timepicker is used in filters -->
-<link rel="stylesheet" type="text/css" href="/path/to/jquery-ui-timepicker-addon.min.css"/>
-<script type="text/javascript" src="/path/to/jquery-ui-timepicker-addon.min.js"></script>
-<!--  if touch event support is needed (mobile devices) -->
-<script type="text/javascript" src="/path/to/jquery.ui.touch-punch.min.js"></script>
-  
-<!--  PAGINATION plugin -->
-<link rel="stylesheet" type="text/css" href="/path/to/jquery.bs_pagination.min.css">
-<script type="text/javascript" src="/path/to/jquery.bs_pagination.min.js"></script>
-<script type="text/javascript" src="/path/to/bs_pagination/localization/en.min.js"></script>
- 
-<!--  FILTERS plugin --> 
-<link rel="stylesheet" type="text/css" href="/path/to/jquery.jui_filter_rules.bs.min.css">
-<script type="text/javascript" src="/path/to/jquery.jui_filter_rules.min.js"></script>
-<script type="text/javascript" src="/path/to/jui_filter_rules/localization/en.min.js"></script>
-<!--  required from filters plugin -->
-<script type="text/javascript" src="/path/to/moment.min.js"></script>
- 
-<!--  DATAGRID plugin -->
-<link rel="stylesheet" type="text/css" href="/path/to/jquery.bs_grid.min.css">
-<script type="text/javascript" src="/path/to/jquery.bs_grid.min.js"></script>
-<script type="text/javascript" src="/path/to/bs_grid/localization/en.min.js"></script>
-</head>
 <jsp:include page="menu.jsp" />
+<script src="resources/globais/js/bootstrap-table.js"></script>
+</head>
+
 <body>
+
+
 	
 	<!-- !!!!!!!!!!!!!!!!!!!!AQUI COMEÇA O FORMULÁRIO DE CADASTRO DE ALUNOS!!!!!!!!!!!!!!!!!!!!!!!-->
 	
@@ -113,7 +90,22 @@
 </form>
 	
 <!-- !!!!!!!!!!!!!!!!!!!!TERMINA AQUI O FORMULÁRIO DE CADASTRO DE ALUNOS!!!!!!!!!!!!!!!!!!!!!!!!!-->
-	<div id="demo_grid1"></div>
+	<table data-toggle="table" data-url="recuperarDados.json">
+    <thead>
+        <tr>
+            <th data-field="id">Primeiro Nome</th>
+            <th data-field="name">Sobrenome</th>
+            <th data-field="price">Sexo</th>
+            <th data-field="price">Perfil do Treino</th>
+            <th data-field="price">Valor Mensalidade</th>
+            <th data-field="price">Status Débito</th>
+            <th data-field="price">Status Matrícula</th>
+                       								
+        </tr>
+    </thead>
+	</table>
+
+
 	
 </body>
 </html>
