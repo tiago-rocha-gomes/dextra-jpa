@@ -1,0 +1,12 @@
+[
+	{
+		"nome":"Larissa",
+		"sobrenome":"Arruda",
+		"sexo" : "Feminino",
+		"perfil_treino" : "Insano",
+		"vlr_mensalidade" : "120,00",
+		"status_debito" : "EM DIA",
+		"status_matricula" : "Ativo"
+		
+	}
+]
