@@ -89,18 +89,19 @@
 	
 <!-- !!!!!!!!!!!!!!!!!!!!TERMINA AQUI O FORMULÁRIO DE CADASTRO DE ALUNOS!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
+<!--  Grid de consulta alunos -->
 	<div  class="container">
 	<table data-toggle="table" data-url="resources/recuperarDados.json" data-click-to-select="true">
     <thead>
         <tr >
-         	<th data-field="state" data-checkbox="true" ></th>
-            <th data-field="nome">Primeiro Nome</th>
-            <th data-field="sobrenome">Sobrenome</th>
-            <th data-field="sexo">Sexo</th>
-            <th data-field="perfil_treino">Perfil do Treino</th>
-            <th data-field="vlr_mensalidade">Valor Mensalidade</th>
-            <th data-field="status_debito">Status Débito</th>
-            <th data-field="status_matricula">Status Matrícula</th>
+         	<th data-field="state"  data-checkbox="true" ></th>
+            <th data-field="nome" >Primeiro Nome</th>
+            <th data-field="sobrenome" >Sobrenome</th>
+            <th data-field="sexo" >Sexo</th>
+            <th data-field="perfil_treino" >Perfil do Treino</th>
+            <th data-field="vlr_mensalidade" >Valor Mensalidade</th>
+            <th data-field="status_debito" >Status Débito</th>
+            <th data-field="status_matricula" >Status Matrícula</th>
         </tr>
     </thead>
 	</table>

@@ -8,5 +8,15 @@
 		"status_debito" : "EM DIA",
 		"status_matricula" : "Ativo"
 		
+	},
+	{
+		"nome":"Maria",
+		"sobrenome":"Silva",
+		"sexo" : "Feminino",
+		"perfil_treino" : "Insano",
+		"vlr_mensalidade" : "120,00",
+		"status_debito" : "EM DIA",
+		"status_matricula" : "Ativo"
+		
 	}
 ]
