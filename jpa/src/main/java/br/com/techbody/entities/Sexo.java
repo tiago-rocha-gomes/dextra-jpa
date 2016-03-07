@@ -25,12 +25,18 @@ public class Sexo {
 	@Id
 	private Long id;
 	
+	public Sexo(Long id, Character descricao) {
+		super();
+		this.id = id;
+		this.descricao = descricao;
+	}
+
 	@JsonIgnore(value=true)
 	@OneToMany(fetch=FetchType.LAZY, mappedBy = "sexo")
 	private Collection<Pessoa> pessoa;
 	
 	@Column
-	private String descricao;
+	private Character descricao;
 	
 
 	public Long getId() {
@@ -41,11 +47,11 @@ public class Sexo {
 		this.id = id;
 	}
 
-	public String getDescricao() {
+	public Character getDescricao() {
 		return descricao;
 	}
 
-	public void setDescricao(String descricao) {
+	public void setDescricao(Character descricao) {
 		this.descricao = descricao;
 	}
 }
