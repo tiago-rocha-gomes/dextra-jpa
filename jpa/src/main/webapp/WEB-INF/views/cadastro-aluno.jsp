@@ -10,8 +10,6 @@
 </head>
 
 <body>
-
-
 	
 	<!-- !!!!!!!!!!!!!!!!!!!!AQUI COMEÇA O FORMULÁRIO DE CADASTRO DE ALUNOS!!!!!!!!!!!!!!!!!!!!!!!-->
 	
@@ -90,6 +88,7 @@
 </form>
 	
 <!-- !!!!!!!!!!!!!!!!!!!!TERMINA AQUI O FORMULÁRIO DE CADASTRO DE ALUNOS!!!!!!!!!!!!!!!!!!!!!!!!!-->
+
 	<div  class="container">
 	<table data-toggle="table" data-url="resources/recuperarDados.json" data-click-to-select="true">
     <thead>
