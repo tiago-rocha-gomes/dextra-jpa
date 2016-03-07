@@ -4,12 +4,12 @@ import br.com.techbody.entities.Sexo;
 
 public enum SexoEnum {
 	
-	MASCULINO (1,"M"), FEMININO(2,"F");
+	MASCULINO (1,'M'), FEMININO(2,'F');
 	
 	private Integer id;
-	private String desc;
+	private Character desc;
 	
-	private SexoEnum(Integer id, String desc) {
+	private SexoEnum(Integer id, Character desc) {
 		this.id = id;
 		this.desc = desc;
 	}
@@ -18,12 +18,21 @@ public enum SexoEnum {
 		return id;
 	}
 
-	public String getDesc() {
+	public Character getDesc() {
 		return desc;
 	}
 	
-	
+	public static Sexo generateSexoEntity(SexoEnum sexo){
+			return new Sexo(Long.valueOf(sexo.getId()), sexo.getDesc());
+	}
 			
-	
+	public static SexoEnum getByDesc(Character sexo){
+		for(SexoEnum s: values()){
+			if (s.getDesc().equals(sexo)){
+				return s;
+			}
+		}
+		return null;
+	}
 
 }

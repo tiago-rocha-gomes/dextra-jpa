@@ -12,48 +12,12 @@ import javax.persistence.SequenceGenerator;
 @DiscriminatorValue(value="A")
 public class Aluno extends Pessoa{
 	
-	@GeneratedValue(strategy=GenerationType.AUTO, generator="aluno_gen")
-	@SequenceGenerator(name = "aluno_gen", sequenceName = "seq_aluno")
-	@Id
-	private Long id;
-	
 	@Column
 	private double peso;
 	
 	@Column
 	private double altura;
 	
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	@Column
-	private String login;
-	
-	@Column
-	private String senha;
-	
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public double getPeso() {
 		return peso;
 	}
