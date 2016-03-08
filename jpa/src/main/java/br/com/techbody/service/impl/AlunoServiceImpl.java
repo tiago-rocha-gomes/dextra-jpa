@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import br.com.techbody.dao.AlunoDao;
 import br.com.techbody.entities.Aluno;
@@ -19,7 +20,6 @@ public class AlunoServiceImpl implements AlunoService{
 	public void inserirAluno(Aluno aluno) {
 		alunoDAO.save(aluno);
 	}
-	
 	
 	
 	@Override
@@ -41,7 +41,18 @@ public class AlunoServiceImpl implements AlunoService{
 		alunoDAO.delete(aluno);
 	}
 	
+		
+	@Override
+	public Aluno update(Aluno aluno) {
+		Aluno pessoaAtualizada = alunoDAO.update(aluno);
+		return pessoaAtualizada;
+	}
+	
 
+	@Override
+	public Aluno findById(Long id) {
+		return alunoDAO.findById(id);
+	}
 	
 	
 	

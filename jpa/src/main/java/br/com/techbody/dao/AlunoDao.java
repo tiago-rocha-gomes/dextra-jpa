@@ -9,7 +9,7 @@ public interface AlunoDao extends GenericDao<Aluno, Long>{
 	
 	List<Aluno> getAll();
 	
-	
+	Aluno update(Aluno a);
 	
 	
 	
