@@ -1,9 +1,11 @@
 package br.com.techbody.controller;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -55,9 +57,26 @@ public class AlunoController {
 			
 			message = "Aluno inserido com sucesso.";
 		}catch(Exception e){
-			message = e.getMessage();
+			message = "Problema ao inserir aluno";
 		}	
 		return new MessageResponse(message);
 	}
+	
+	@RequestMapping("/excluir-aluno")
+	@ResponseBody
+	public MessageResponse excluirAluno(@RequestParam List<Long> ids){
+		String message = "";
+		try{
+			alunoService.excluirAluno(ids);
+
+			message = "Aluno excluido com sucesso";
+		}catch(Exception e){
+			message = e.getMessage();
+		}
+		
+		return new MessageResponse(message);
+	}
+	
+	
 
 }

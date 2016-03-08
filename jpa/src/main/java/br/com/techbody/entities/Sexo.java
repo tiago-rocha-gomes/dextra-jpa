@@ -30,6 +30,10 @@ public class Sexo {
 		this.id = id;
 		this.descricao = descricao;
 	}
+	
+	public Sexo(){
+		
+	}
 
 	@JsonIgnore(value=true)
 	@OneToMany(fetch=FetchType.LAZY, mappedBy = "sexo")
