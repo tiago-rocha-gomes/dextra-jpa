@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -41,6 +42,8 @@ public class AlunoController {
 		try{
 			Aluno a = new Aluno();
 			
+			
+			
 			a.setAltura(altura);
 			a.setDataCadastro(new Date());
 			a.setIdade(idade);
@@ -56,7 +59,7 @@ public class AlunoController {
 			
 			message = "Aluno inserido com sucesso.";
 		}catch(Exception e){
-			message = e.getMessage();
+			message = "Problema ao inserir aluno";
 		}	
 		return new MessageResponse(message);
 	}

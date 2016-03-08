@@ -7,6 +7,7 @@
 <title>Cadastro de Aluno</title>
 <jsp:include page="menu.jsp" />
 <script src="resources/globais/js/bootstrap-table.js"></script>
+<script src="resources/globais/js/bootstrap-table-flat-json.js"></script>
  
 
 </head>
@@ -104,13 +105,13 @@
 
 <!--  Grid de consulta alunos -->
 	<div  class="container">
-	<table data-toggle="table" data-url="resources/recuperarDados.json" data-click-to-select="true">
+	<table data-toggle="table" data-url="consulta-alunos" data-click-to-select="true">
     <thead>
         <tr>
          	<th data-field="state"  data-checkbox="true" ></th>
             <th data-field="nome" >Primeiro Nome</th>
             <th data-field="sobrenome" >Sobrenome</th>
-            <th data-field="sexo" >Sexo</th>
+            <th data-field="sexo.descricao" >Sexo</th>
             <th data-field="perfil_treino" >Perfil do Treino</th>
             <th data-field="vlr_mensalidade" >Valor Mensalidade</th>
             <th data-field="status_debito" >Status Débito</th>
