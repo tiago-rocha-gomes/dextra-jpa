@@ -38,7 +38,8 @@
 				<div style="display: none" id="login-alert"
 					class="alert alert-danger col-sm-12"></div>
 
-				<form id="loginform" action= "POST" class="form-horizontal" role="form">
+				<form id="loginform" action="POST" class="form-horizontal"
+					role="form">
 
 					<div style="margin-bottom: 25px" class="input-group">
 						<span class="input-group-addon"><i
@@ -68,15 +69,8 @@
 
 				</form>
 
-
-
 			</div>
+
 		</div>
 	</div>
-	
-
-
-
-
-
-
+</div>
