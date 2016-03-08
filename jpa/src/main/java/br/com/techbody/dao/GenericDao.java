@@ -15,4 +15,5 @@ public interface GenericDao<T, ID extends Serializable> {
 	public List<T> listByQuery(String query);
 	public T getByParams(String query, Map<String, Object> params);
 	public T getByParams(Map<String, Object> params);
+	
 }
