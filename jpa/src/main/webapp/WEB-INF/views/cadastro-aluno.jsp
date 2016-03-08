@@ -96,7 +96,7 @@
     <button id="button1id" onclick="sendToServer()" name="button1id" class="btn btn-success">Salvar</button>
     <button id="button2id" name="button2id" class="btn btn-danger">Limpar</button>
   </div>   
-</div>
+</div>   
 </div>
 	</div>
 	
