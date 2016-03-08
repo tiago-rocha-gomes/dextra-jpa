@@ -27,7 +27,19 @@ public class AlunoServiceImpl implements AlunoService{
 		return alunoDAO.getAll();
 	}
 	
-	
+	@Override
+	public void excluirAluno(List<Long> ids) {
+		Aluno a = new Aluno();
+		for(int i = 0; i<ids.size(); i++){	
+			a.setId(ids.get(i));
+			excluirAluno(a);
+		}
+	}
+
+	@Override
+	public void excluirAluno(Aluno aluno) {
+		alunoDAO.delete(aluno);
+	}
 	
 
 	

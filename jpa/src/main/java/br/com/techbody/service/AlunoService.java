@@ -10,5 +10,8 @@ public interface AlunoService {
 	
 	List<Aluno> getAll();
 	
-	
+	void excluirAluno(List<Long> ids);
+
+	void excluirAluno(Aluno aluno);
+
 }
