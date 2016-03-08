@@ -24,7 +24,7 @@
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		p:driverClassName="org.postgresql.Driver" p:url="jdbc:postgresql://localhost:5432/dextra"
-		p:username="postgres" p:password="postgres">
+		p:username="java01" p:password="java">
 	</bean>
 
 	<bean
