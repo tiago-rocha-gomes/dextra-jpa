@@ -43,7 +43,6 @@ public class Pessoa {
 	@Column
 	private int idade;
 	
-
 	@Column
 	private Date dataCadastro;
 	

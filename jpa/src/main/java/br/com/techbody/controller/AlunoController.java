@@ -29,6 +29,7 @@ public class AlunoController {
 	}
 	
 	@RequestMapping("/inserir-aluno")
+	@ResponseBody
 	public MessageResponse inserirAluno(@RequestParam String nome,
 			@RequestParam String sobrenome,
 			@RequestParam int idade,
@@ -57,7 +58,7 @@ public class AlunoController {
 			
 			message = "Aluno inserido com sucesso.";
 		}catch(Exception e){
-			message = "Falha ao inserir aluno.";
+			message = e.getMessage();
 		}	
 		return new MessageResponse(message);
 	}
