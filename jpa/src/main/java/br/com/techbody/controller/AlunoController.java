@@ -1,12 +1,16 @@
 package br.com.techbody.controller;
 
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
+import br.com.techbody.controller.json.AlunoResponse;
 import br.com.techbody.controller.json.MessageResponse;
 import br.com.techbody.entities.Aluno;
 import br.com.techbody.entities.Sexo;
@@ -58,4 +62,39 @@ public class AlunoController {
 		return new MessageResponse(message);
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+
+	@RequestMapping("/consulta-alunos")
+	@ResponseBody
+	public AlunoResponse getAll(){
+		Boolean success = null;
+		String message= "";
+		try{
+			
+			List<Aluno> lista = alunoService.getAll();
+			success = true;
+			message = lista != null ? "Pessoas consultadas com sucesso!" : "Nao existem pessoas cadastradas.";
+			return new AlunoResponse(success, message, lista);
+		
+		}catch(Exception e){
+			success = false;
+			message = "Houve um problema na consulta da Pessoa!";
+			return new AlunoResponse(success, message);
+		}
+		
+		
+	}
+	
+	
+	
+	
+	
+	
 }

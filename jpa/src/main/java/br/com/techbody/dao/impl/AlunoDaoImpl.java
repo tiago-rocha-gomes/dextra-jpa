@@ -7,6 +7,7 @@ import br.com.techbody.entities.Aluno;
 
 @Repository
 public class AlunoDaoImpl extends GenericDaoImp<Aluno, Long> implements AlunoDao{
-
+	
+	
 
 }

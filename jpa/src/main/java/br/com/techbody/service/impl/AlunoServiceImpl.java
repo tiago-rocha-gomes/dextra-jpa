@@ -1,5 +1,7 @@
 package br.com.techbody.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,4 +19,18 @@ public class AlunoServiceImpl implements AlunoService{
 	public void inserirAluno(Aluno aluno) {
 		alunoDAO.save(aluno);
 	}
+	
+	
+	
+	@Override
+	public List<Aluno> getAll() {
+		return alunoDAO.getAll();
+	}
+	
+	
+	
+
+	
+	
+	
 }
