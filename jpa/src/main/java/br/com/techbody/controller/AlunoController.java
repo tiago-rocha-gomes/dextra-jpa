@@ -92,28 +92,17 @@ public class AlunoController {
 
 	@RequestMapping("/consulta-alunos")
 	@ResponseBody
-	public AlunoResponse getAll(){
+	public List<Aluno> getAll(){
 		Boolean success = null;
 		String message= "";
 		try{
-			
 			List<Aluno> lista = alunoService.getAll();
-			success = true;
-			message = lista != null ? "Pessoas consultadas com sucesso!" : "Nao existem pessoas cadastradas.";
-			return new AlunoResponse(success, message, lista);
+			return lista;
 		
 		}catch(Exception e){
 			success = false;
 			message = "Houve um problema na consulta da Pessoa!";
-			return new AlunoResponse(success, message);
+			return null;
 		}
-		
-		
 	}
-	
-	
-	
-	
-	
-	
 }
