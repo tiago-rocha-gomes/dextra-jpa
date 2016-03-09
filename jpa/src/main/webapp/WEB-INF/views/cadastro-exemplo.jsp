@@ -67,7 +67,7 @@
 						</div>
 					</div>
 				</fieldset>
-			</form>
+			</form>  
 			<!-- Button (Double) -->
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="button1id"></label>
