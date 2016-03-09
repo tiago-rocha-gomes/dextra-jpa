@@ -117,13 +117,13 @@
     <thead>
         <tr>
          	<th data-field="state"  data-checkbox="true" ></th>
-            <th data-field="nome" >Primeiro Nome</th>
+            <th data-field="nome" >Nome</th>
             <th data-field="sobrenome" >Sobrenome</th>
             <th data-field="sexo.descricao" >Sexo</th>
             <th data-field="salario" >Salario</th>
-            <th data-field="data_cadastro" >Data Cadastro</th>
             <th data-field="login" >Login</th>
-            <th data-field="senha" >Senha</th>
+            <th data-field="data_cadastro" >Data Cadastro</th>
+            
         </tr>
     </thead>
 	</table>
