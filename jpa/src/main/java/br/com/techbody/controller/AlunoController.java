@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,7 +42,7 @@ public class AlunoController {
 		try{
 			Aluno a = new Aluno();
 			
-			SexoEnum.getByDesc(sexo);
+			
 			
 			a.setAltura(altura);
 			a.setDataCadastro(new Date());
@@ -84,25 +84,67 @@ public class AlunoController {
 	
 	
 	
-	
-	
-	
-	
-	
-
-	@RequestMapping("/consulta-alunos")
+@RequestMapping("/consulta-alunos")
 	@ResponseBody
-	public List<Aluno> getAll(){
+	public AlunoResponse getAll() {
+		Boolean success = null;
+		String message = "";
+		try {
+
+			List<Aluno> lista = alunoService.getAll();
+			success = true;
+			message = lista != null ? "Alunos consultados com sucesso!"
+					: "Nao existem pessoas cadastradas.";
+			return new AlunoResponse(success, message, lista);
+
+		} catch (Exception e) {
+			success = false;
+			message = "Houve um problema na consulta do aluno!";
+			return new AlunoResponse(success, message);
+		}
+
+	}
+
+	
+	
+	@RequestMapping("/atualiza-aluno")
+	@ResponseBody
+	public AlunoResponse update(@RequestParam Long id, @RequestParam String nome,
+			@RequestParam String sobrenome, @RequestParam int idade,
+			@RequestParam char sexo, @RequestParam double altura,
+			@RequestParam double peso) {
+		
 		Boolean success = null;
 		String message= "";
 		try{
-			List<Aluno> lista = alunoService.getAll();
-			return lista;
+			Aluno a = alunoService.findById(id);
+
+			a.setNome(nome);
+			a.setSobrenome(sobrenome);
+			a.setIdade(idade);
+
+			SexoEnum byDesc = SexoEnum.getByDesc(sexo);
+			Sexo generateSexoEntity = SexoEnum.generateSexoEntity(byDesc);
+			
+			a.setSexo(generateSexoEntity);
+			a.setPeso(peso);
+			a.setAltura(altura);
+			
+			alunoService.update(a);
+			success = true;
+			message = "Aluno atualizado com sucesso.";
+			return new AlunoResponse(success, message, Arrays.asList(a));
 		
 		}catch(Exception e){
 			success = false;
-			message = "Houve um problema na consulta da Pessoa!";
-			return null;
+			message = "Houve um problema na atualizacao do aluno! / Aluno nao encontrado!";
+			return new AlunoResponse(success, message);
 		}
 	}
+	
+	
+	
+	
+	
+	
 }

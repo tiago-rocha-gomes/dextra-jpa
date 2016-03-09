@@ -22,6 +22,11 @@ public class CadastroEnderecoExemploController {
 		return "cadastro-exemplo";
 	}
 	
+	@RequestMapping(value="/test")
+	public String direcionarTeste(){
+		return "test";
+	}
+	
 	
 	@RequestMapping(value="/cadastrar-endereco", method=RequestMethod.POST)
 	@ResponseBody
