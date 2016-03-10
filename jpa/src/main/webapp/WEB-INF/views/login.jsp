@@ -1,18 +1,4 @@
-<head>
-<!-- Bootstrap -->
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<title>TechBody</title>
-
-<link href="resources/globais/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- jQuery (obrigatório para plugins JavaScript do Bootstrap) -->
-<script src="resources/globais/js/jquery.min.js"></script>
-<!-- Inclui todos os plugins compilados (abaixo), ou inclua arquivos separadados se necessário -->
-<script src="resources/globais/js/bootstrap.min.js"></script>
-</head>
+<script src="resources/js/login.js"></script>
 
 
 
@@ -22,6 +8,14 @@
 
 
 <div class="container">
+	<div class="alert alert-success" role="alert" style="font-weight: bold;">
+		<!-- DIV DE MSG DE SUCESSO -->
+	</div>
+	
+	<div class="alert alert-warning" role="alert" style="font-weight: bold;">
+		<!-- DIV DE MSG DE ERRO -->
+	</div>
+			
 	<div id="loginbox" style="margin-top: 50px;"
 		class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 		<div class="panel panel-info">
@@ -34,9 +28,6 @@
 			</div>
 
 			<div style="padding-top: 30px" class="panel-body">
-
-				<div style="display: none" id="login-alert"
-					class="alert alert-danger col-sm-12"></div>
 
 				<form id="loginform" action="POST" class="form-horizontal"
 					role="form">
@@ -59,9 +50,7 @@
 						<!-- Button -->
 
 						<div class="col-sm-12 controls">
-							<a id="btn-login" href="#" class="btn btn-success">Login </a>
-							<!--<a id="btn-fblogin" href="#" class="btn btn-primary">Login with Facebook</a>-->
-
+							<a id="btn-login" href="#" onclick="sendToServer()" class="btn btn-success">Login </a>
 						</div>
 					</div>
 

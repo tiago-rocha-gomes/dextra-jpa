@@ -141,7 +141,7 @@ public class GenericDaoImp<T, ID extends Serializable> implements GenericDao<T, 
 			int i = 0;
 			for(String paramName : params.keySet()){
 				if(i < params.keySet().size() - 1){
-					WHERE += " " + paramName + " = " + ":" + paramName + "AND ";
+					WHERE += " " + paramName + " = " + ":" + paramName + " AND ";
 				}else{
 					WHERE += " " + paramName + " = " + ":" + paramName; 
 				}

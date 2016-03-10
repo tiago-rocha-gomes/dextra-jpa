@@ -29,6 +29,8 @@ public class AlunoController {
 		return "cadastro-aluno";
 	}
 	
+	
+	
 	@RequestMapping("/inserir-aluno")
 	@ResponseBody
 	public MessageResponse inserirAluno(@RequestParam String nome,
