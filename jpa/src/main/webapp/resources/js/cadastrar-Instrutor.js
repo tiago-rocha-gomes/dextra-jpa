@@ -43,6 +43,42 @@ function validateFields() {
 	return valid;
 };
 
+function parseDate(date){
+	var day = date.getDate();
+	var month = date.getMonth()+1;
+	var year = date.getFullYear();
+	if(day < 10){
+		day = '0'+day;
+	}
+	if(month < 10){
+		month = '0'+month;
+	}
+	return day + '/' + month + '/' + year;
+}
+
+function formataData(value, row, index){
+	return parseDate(new Date(value));
+}
+
+function formataAlterar(value,  row, index){
+	return "<a href='javascript:alterarInstrutor("+JSON.stringify(row)+");'>Alterar</a>";
+};
+
+function alterarInstrutor(row){		
+	$('#nome').val(row['nome']);
+	$('#sobrenome').val(row['sobrenome']);
+	$('#idade').val(row['idade']);
+	$('#sexo').val(row.sexo['descricao']);
+	$('#salario').val(row['salario']);
+	$('#login').val(row['usuario']);
+	$('#password').val(row['senha']);
+}
+
+function limpar(){
+	var form = $("#form-instrutor")
+	form[0].reset();
+}
+
 function sendToServer() {
 	succesEl.empty();
 	errorEl.empty()
@@ -56,9 +92,9 @@ function sendToServer() {
 			success : function(data) {
 				succesEl.show();
 				succesEl.append(data.message);
-				sucess.append(datastring);
 				errorEl.hide();
 				form[0].reset();
+				$("#grid-instrutor").bootstrapTable('refresh');
 			},
 			error : function(data) {
 				errorEl.show();

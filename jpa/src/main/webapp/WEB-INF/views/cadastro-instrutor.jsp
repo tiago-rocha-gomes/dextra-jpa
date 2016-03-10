@@ -103,7 +103,7 @@
   <label class="col-md-4 control-label" for="button1id"></label>
   <div class="col-md-8">
     <button id="button1id" onclick="sendToServer()" name="button1id" class="btn btn-success">Salvar</button>
-    <button id="button2id" name="button2id" class="btn btn-danger">Limpar</button>
+    <button id="button2id" onclick="limpar()" name="button2id" class="btn btn-danger">Limpar</button>
   </div>   
 </div>   
 </div>
@@ -113,17 +113,26 @@
 
 <!--  Grid de consulta alunos -->
 	<div  class="container">
-	<table data-toggle="table" data-url="consulta-instrutor" data-click-to-select="true">
+	<table 
+		data-toggle="table" 
+		data-pagination="true" 
+		data-page-size="5" 
+		data-page-list="[10,15,30]" 
+		data-url="consulta-instrutores" 
+		data-click-to-select="true"
+		id="grid-instrutor"
+	>
     <thead>
         <tr>
          	<th data-field="state"  data-checkbox="true" ></th>
+            <th data-field="id" data-visible="false">ID</th>
             <th data-field="nome" >Nome</th>
             <th data-field="sobrenome" >Sobrenome</th>
             <th data-field="sexo.descricao" >Sexo</th>
             <th data-field="salario" >Salario</th>
-            <th data-field="login" >Login</th>
-            <th data-field="data_cadastro" >Data Cadastro</th>
-            
+            <th data-field="usuario" >Login</th>
+            <th data-field="dataCadastro" data-formatter="formataData">Data Cadastro</th>
+            <th data-formatter="formataAlterar"></th>
         </tr>
     </thead>
 	</table>

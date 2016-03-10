@@ -1,5 +1,6 @@
 package br.com.techbody.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -71,23 +72,15 @@ public class InstrutorController {
 	
 	@RequestMapping("/consulta-instrutores")
 	@ResponseBody
-	public InstrutorResponse getAll() {
-		Boolean success = null;
+	public List<Instrutor> getAll() {
 		String message = "";
+		List<Instrutor> lista = new ArrayList<>();
 		try {
-
-			List<Instrutor> lista = instrutorService.getAll();
-			success = true;
-			message = lista != null ? "Instrutores consultados com sucesso!"
-					: "Nao existem instrutores cadastrados.";
-			return new InstrutorResponse(success, message, lista);
-
+			lista = instrutorService.getAll();
 		} catch (Exception e) {
-			success = false;
 			message = "Houve um problema na consulta do Instrutor!";
-			return new InstrutorResponse(success, message);
 		}
-
+		return lista;
 	}
 	
 	@RequestMapping("/atualiza-instrutor")

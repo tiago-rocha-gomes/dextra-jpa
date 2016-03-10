@@ -72,7 +72,6 @@ function sendToServer() {
 };
 
 function alteraAluno(value,  row, index){
-	console.debug(arguments);
 	return "<a href='javascript:alterar("+JSON.stringify(row)+");'>Alterar</a>";
 };
 
@@ -80,11 +79,9 @@ function alterar(row){
 	$('#nome').val(row['nome']);
 	$('#sobrenome').val(row['sobrenome']);
 	$('#idade').val(row['idade']);
-	$('#id').val(row.sexo['id']);
+	$('#sexo').val(row.sexo['descricao']);
 	$('#altura').val(row['altura']);
 	$('#peso').val(row['peso']);
-	console.debug(row['nome']);
-	console.debug(row);	
 }
 
 function limpar(){
