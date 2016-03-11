@@ -1,5 +1,6 @@
 package br.com.techbody.controller;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
@@ -92,21 +93,22 @@ public class AlunoController {
 	
 @RequestMapping("/consulta-alunos")
 	@ResponseBody
-	public AlunoResponse getAll() {
+	public List<Aluno> getAll() {
 		Boolean success = null;
 		String message = "";
+		List<Aluno> lista = new ArrayList<>();
 		try {
 
-			List<Aluno> lista = alunoService.getAll();
+			lista = alunoService.getAll();
 			success = true;
 			message = lista != null ? "Alunos consultados com sucesso!"
 					: "Nao existem pessoas cadastradas.";
-			return new AlunoResponse(success, message, lista);
+			return lista;
 
 		} catch (Exception e) {
 			success = false;
 			message = "Houve um problema na consulta do aluno!";
-			return new AlunoResponse(success, message);
+			return lista;
 		}
 
 	}

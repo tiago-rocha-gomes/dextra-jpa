@@ -105,7 +105,9 @@
 
 <!--  Grid de consulta alunos -->
 	<div  class="container" >
-	<table data-toggle="table" data-pagination="true" data-page-size="5" data-page-list="[10,15,30]" id="grid_alunos" data-url="consulta-alunos" data-click-to-select="true">
+	<table data-toggle="table" data-pagination="true" 
+	data-page-size="5" data-page-list="[10,15,30]" id="grid_alunos" 
+	data-url="consulta-alunos" data-click-to-select="true">
     <thead>
         <tr>
          	<th data-field="state"  data-checkbox="true" ></th>
