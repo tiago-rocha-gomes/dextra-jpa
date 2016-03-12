@@ -27,6 +27,7 @@ public class AlunoServiceImpl implements AlunoService{
 		return alunoDAO.getAll();
 	}
 	
+	
 	@Override
 	public void excluirAluno(List<Long> ids) {
 		Aluno a = new Aluno();

@@ -30,6 +30,10 @@
 <!-- Form Name -->
 <legend>Cadastro de Aluno</legend>
 
+
+<input id="id" name="id" class="form-control input-md"  type="hidden">
+
+
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="nome">Nome</label>  
@@ -104,14 +108,25 @@
 <!-- !!!!!!!!!!!!!!!!!!!!TERMINA AQUI O FORMULÁRIO DE CADASTRO DE ALUNOS!!!!!!!!!!!!!!!!!!!!!!!!!-->
 
 <!--  Grid de consulta alunos -->
-	<div  class="container" >
-	<table data-toggle="table" data-pagination="true" 
-	data-page-size="5" data-page-list="[10,15,30]" id="grid_alunos" 
-	data-url="consulta-alunos" data-click-to-select="true">
+<div  class="container" >
+	<button 
+		id="button3id" 
+		name="button3id" 
+		onclick="remover()" 
+		class="btn btn-danger">Remover</button>
+	<table 
+		data-toggle="table" 
+		data-pagination="true" 
+		data-page-size="5" 
+		data-page-list="[10,15,30]" 
+		id="grid-alunos" 
+		data-url="consulta-alunos" 
+		data-click-to-select="true"
+		>
     <thead>
         <tr>
          	<th data-field="state"  data-checkbox="true" ></th>
-            <th data-field="id" >Id</th>
+            <th data-field="id" data-visible="false" >Id</th>
             <th data-field="nome" >Primeiro Nome</th>
             <th data-field="sobrenome" >Sobrenome</th>
             <th data-field="sexo.descricao" >Sexo</th>
@@ -123,9 +138,8 @@
         </tr>
     </thead>
 	</table>
-	</div>
-
-
 	
+	</div>
+ 
 </body>
 </html>
