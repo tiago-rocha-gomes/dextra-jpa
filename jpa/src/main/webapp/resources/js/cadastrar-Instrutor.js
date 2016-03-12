@@ -64,7 +64,8 @@ function formataAlterar(value,  row, index){
 	return "<a href='javascript:alterarInstrutor("+JSON.stringify(row)+");'>Alterar</a>";
 };
 
-function alterarInstrutor(row){		
+function alterarInstrutor(row){	
+	$('#id').val(row['id']);
 	$('#nome').val(row['nome']);
 	$('#sobrenome').val(row['sobrenome']);
 	$('#idade').val(row['idade']);
@@ -83,18 +84,60 @@ function sendToServer() {
 	succesEl.empty();
 	errorEl.empty()
 	if (validateFields()) {
+		var id = $('#id').val();
 		var form = $("#form-instrutor");
-		var datastring = form.serialize();
+		var datastring = form.serialize(); 
+		var url = "";
+	
+		
+			if(typeof(id) == "undefined" || id == ""){
+				url = "inserir-instrutor";
+			}
+			else{
+				url = "atualiza-instrutor";
+			}
+			
+			$.ajax({
+				type : "POST",
+				url: url,
+				data : datastring,
+				success : function(data) {
+					succesEl.show();
+					succesEl.append(data.message);
+					errorEl.hide();
+					form[0].reset();
+					$("#grid-instrutor").bootstrapTable('refresh');
+				},
+				error : function(data) {
+					errorEl.show();
+					errorEl.append(data.message);
+					succesEl.hide();
+				}
+			});
+	}
+
+}//sendto server
+	
+function remover(){
+	var $table = $("#grid-instrutor");
+	var selectionsToRemove = $table.bootstrapTable('getAllSelections');
+	var listIdsToRemove = [];
+	for(var i = 0; i < selectionsToRemove.length; i++){
+		var row = selectionsToRemove[i];
+		listIdsToRemove.push(row['id']);
+	}
+	if(listIdsToRemove.length > 0){
 		$.ajax({
 			type : "POST",
-			url : "inserir-instrutor",
-			data : datastring,
+			url: "remover-instrutores",
+			data: JSON.stringify(listIdsToRemove),
+	        contentType: "application/json; charset=utf-8",
+	        dataType: "json",
 			success : function(data) {
 				succesEl.show();
 				succesEl.append(data.message);
 				errorEl.hide();
-				form[0].reset();
-				$("#grid-instrutor").bootstrapTable('refresh');
+				$table.bootstrapTable('refresh');
 			},
 			error : function(data) {
 				errorEl.show();
@@ -103,5 +146,4 @@ function sendToServer() {
 			}
 		});
 	}
-
-};
+}

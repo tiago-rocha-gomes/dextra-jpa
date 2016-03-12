@@ -30,6 +30,18 @@
 <!-- Form Name -->
 <legend>Cadastro de Instrutor</legend>
 
+
+
+
+ 
+  <input  id="id" name="id"  class="form-control input-md"  type="hidden">
+    
+
+
+
+
+
+
 <!-- Text input-->
 <div class="form-group">
   <label class="col-md-4 control-label" for="nome">Nome</label>  
@@ -113,32 +125,35 @@
 
 <!--  Grid de consulta alunos -->
 	<div  class="container">
-	<table 
-		data-toggle="table" 
-		data-pagination="true" 
-		data-page-size="5" 
-		data-page-list="[10,15,30]" 
-		data-url="consulta-instrutores" 
-		data-click-to-select="true"
-		id="grid-instrutor"
-	>
-    <thead>
-        <tr>
-         	<th data-field="state"  data-checkbox="true" ></th>
-            <th data-field="id" data-visible="false">ID</th>
-            <th data-field="nome" >Nome</th>
-            <th data-field="sobrenome" >Sobrenome</th>
-            <th data-field="sexo.descricao" >Sexo</th>
-            <th data-field="salario" >Salario</th>
-            <th data-field="usuario" >Login</th>
-            <th data-field="dataCadastro" data-formatter="formataData">Data Cadastro</th>
-            <th data-formatter="formataAlterar"></th>
-        </tr>
-    </thead>
-	</table>
-	</div>
-
-
+		<button 
+			id="btnRemover" 
+			onclick="remover()" 
+			name="btnRemover" 
+			class="btn btn-danger">Remover</button>
 	
+		<table 
+			data-toggle="table" 
+			data-pagination="true" 
+			data-page-size="5" 
+			data-page-list="[10,15,30]" 
+			data-url="consulta-instrutores" 
+			data-click-to-select="true"
+			id="grid-instrutor"
+		>
+	    <thead>
+	        <tr>
+	         	<th data-field="state" data-checkbox="true" ></th>
+	            <th data-field="id" data-visible="false">ID</th>
+	            <th data-field="nome" >Nome</th>
+	            <th data-field="sobrenome" >Sobrenome</th>
+	            <th data-field="sexo.descricao" >Sexo</th>
+	            <th data-field="salario" >Salario</th>
+	            <th data-field="usuario" >Login</th>
+	            <th data-field="dataCadastro" data-formatter="formataData">Data Cadastro</th>
+	            <th data-formatter="formataAlterar"></th>
+	        </tr>
+	    </thead>
+		</table>
+	</div>
 </body>
 </html>
