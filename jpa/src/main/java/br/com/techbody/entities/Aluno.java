@@ -1,8 +1,15 @@
 package br.com.techbody.entities;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 @Entity
 @DiscriminatorValue(value="A")
@@ -30,6 +37,10 @@ public class Aluno extends Pessoa{
 	public void setAltura(double altura) {
 		this.altura = altura;
 	}
+	
+	@OneToMany(fetch=FetchType.LAZY, mappedBy = "aluno")
+	@Cascade(CascadeType.ALL)
+	private List<HistoricoImc> historico;
 
 
 	/*

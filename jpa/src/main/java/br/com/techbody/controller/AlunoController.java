@@ -49,7 +49,6 @@ public class AlunoController {
 			Aluno a = new Aluno();
 			
 			
-			
 			a.setAltura(altura);
 			a.setDataCadastro(new Date());
 			a.setIdade(idade);
@@ -85,11 +84,7 @@ public class AlunoController {
 		
 		return new MessageResponse(message);
 	}
-	
-	
-
-	
-	
+		
 	
 @RequestMapping("/consulta-alunos")
 	@ResponseBody
@@ -113,8 +108,6 @@ public class AlunoController {
 
 	}
 
-	
-	
 	@RequestMapping("/atualiza-aluno")
 	@ResponseBody
 	public AlunoResponse update(@RequestParam Long id, @RequestParam String nome,
@@ -150,6 +143,21 @@ public class AlunoController {
 		}
 	}
 	
+	@RequestMapping("/calcular-imc")
+	@ResponseBody
+	public MessageResponse calcularIMC(@RequestParam Long id){
+		
+		String message = "";
+		try{
+
+			alunoService.manterImc(id);
+			
+		}catch (Exception e){
+			
+		}
+		return new MessageResponse(message);
+	}
+
 	
 	
 	

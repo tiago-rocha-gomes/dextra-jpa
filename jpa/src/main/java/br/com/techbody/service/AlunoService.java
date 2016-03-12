@@ -3,6 +3,7 @@ package br.com.techbody.service;
 import java.util.List;
 
 import br.com.techbody.entities.Aluno;
+import br.com.techbody.enums.ImcEnum;
 
 public interface AlunoService {
 
@@ -17,4 +18,6 @@ public interface AlunoService {
 	Aluno update(Aluno aluno);
 	
 	Aluno findById(Long id);
+
+	ImcEnum manterImc(Long id);
 }
