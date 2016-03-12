@@ -47,11 +47,20 @@ function sendToServer() {
 	succesEl.empty();
 	errorEl.empty()
 	if (validateFields()) {
+		var id = $('#id').val();
 		var form = $("#form-aluno");
 		var datastring = form.serialize();
+		var url = "";
+		if(typeof(id)=="undefined" || id==""){
+			url = "inserir-aluno";
+		}else {
+			url = "atualiza-aluno";
+		}
+			
+		
 		$.ajax({
 			type : "POST",
-			url : "inserir-aluno",
+			url : url,
 			data : datastring,
 			success : function(data) {
 				succesEl.show();
@@ -76,18 +85,51 @@ function alteraAluno(value,  row, index){
 };
 
 function alterar(row){	
+	$('#id').val(row['id']);
 	$('#nome').val(row['nome']);
 	$('#sobrenome').val(row['sobrenome']);
 	$('#idade').val(row['idade']);
 	$('#sexo').val(row.sexo['descricao']);
 	$('#altura').val(row['altura']);
 	$('#peso').val(row['peso']);
-}
+};
 
 function limpar(){
 	var form = $("#form-aluno")
 	form[0].reset();
-}
+};
 
+
+function remover(){
+	succesEl.empty();
+	errorEl.empty()
+	var $table = $("#grid-alunos");
+	var selectionsToRemove = $table.bootstrapTable('getAllSelections');
+	var listIdsToRemove = [];
+	for(var i = 0; i < selectionsToRemove.length; i++){
+		var row = selectionsToRemove[i];
+		listIdsToRemove.push(row['id']);
+	}
+	if(listIdsToRemove.length > 0){
+		$.ajax({
+			type : "POST",
+			url: "excluir-aluno",
+			data: JSON.stringify(listIdsToRemove),
+	        contentType: "application/json; charset=utf-8",
+	        dataType: "json",
+			success : function(data) {
+				succesEl.show();
+				succesEl.append(data.message);
+				errorEl.hide();
+				$table.bootstrapTable('refresh');
+			},
+			error : function(data) {
+				errorEl.show();
+				errorEl.append(data.message);
+				succesEl.hide();
+			}
+		});
+	}
+};
 
 
